@@ -1,0 +1,33 @@
+import os
+import sys
+
+'''this is a container for the voting data. It takes the hash of the address + full name + date.
+Use now() to keep track of the date, and hash the date separately as well.
+the container should also have a secondary internal container containing their votes.
+lastly it should have an equal and separate container that holds the politicians or whatever being voted for have their names listed.
+Can hold multiple entries for different positions.
+use position as a secondary measure to make sure everything is ready.'''
+
+class Vote:
+
+	def __init__(self):
+        __ZipCode = None #take zip-code for sorts involving this class object
+        __VoteBlock = [[[]]] #List of a list of a list, first list is the 'race' being run, second is position, and third are chosen candidates.
+	
+	def insert_votes(self, block):
+		#We use this function to modify the private values.
+		self.__VoteBlock = block
+	
+	def insert_zip(self, zip):
+		self.__ZipCode = zip
+	
+	def get_votes(self):
+		return self.__VoteBlock
+	
+	def get_zip(self):
+		return self.__ZipCode
+	
+#Some test functions here
+SomeBallot = Vote()
+#Created a new ballot. Now, pass some random stuff to it.
+SomeBallot.insert_votes([[[]][[]][[]]])
